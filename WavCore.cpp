@@ -62,32 +62,6 @@ void WavFile::CreateFromFile(const std::string &filename) throw (WavException, B
     }
 }
 
-//void WavFile::ReadHeader( const char* filename, WavHeaderStruct* HeaderPtrAddress ) throw (IOWavException, BadFormatException) {
-//    //filenameWav = filename;
-//    WavFile::NullHeader( HeaderPtrAddress ); // Fill header with zeroes.
-//
-//    FILE* f = fopen( filename, "rb" );
-//    if ( !f ) {
-//        throw IOWavException (filename);
-//    }
-//
-//    size_t blocksRead = fread( HeaderPtrAddress, sizeof(WavHeaderStruct), 1, f);
-//    if ( blocksRead != 1 ) {
-//        // can't read header, because the file is too small.
-//        throw BadFormatException (filename);
-//    }
-//
-//    fseek( f, 0, SEEK_END ); // seek to the end of the file
-//    size_t fileSize = ftell( f ); // current position is a file size!
-//    fclose( f );
-//
-//    if ( WavFile::CheckHeader( HeaderPtrAddress, fileSize ) != 0 ) {
-//        throw BadFormatException (filename);
-//    }
-////    else {
-////        return 0;
-////}
-//}
 
 string WavFile::GetDescription() const {
     string stringDesc = "-------------------------\n audioFormat   " + to_string(WavHeader.audioFormat) + "\n" +
